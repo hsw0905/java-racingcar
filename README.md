@@ -107,34 +107,14 @@ jun : -----
 - 3항 연산자를 쓰지 않는다.
 - 함수(또는 메소드)가 한 가지 일만 하도록 최대한 작게 만들어라.
 - 프로그래밍 요구사항에서 별도로 변경 불가 안내가 없는 경우 파일 수정과 패키지 이동을 자유롭게 할 수 있다.
-
-### 추가된 요구사항
-
-- 함수(또는 메소드)의 길이가 15라인을 넘어가지 않도록 구현한다.
-    - 함수(또는 메소드)가 한 가지 일만 잘 하도록 구현한다.
 - else 예약어를 쓰지 않는다.
     - 힌트: if 조건절에서 값을 return하는 방식으로 구현하면 else를 사용하지 않아도 된다.
     - else를 쓰지 말라고 하니 switch/case로 구현하는 경우가 있는데 switch/case도 허용하지 않는다.
-
-### 프로그래밍 요구사항 - Car 객체
-
-- 다음 Car 객체를 활용해 구현해야 한다.
-- Car 기본 생성자를 추가할 수 없다.
-- name, position 변수의 접근 제어자인 private을 변경할 수 없다.
-- 가능하면 setPosition(int position) 메소드를 추가하지 않고 구현한다.
-
-```java
-public class Car {
-    private final String name;
-    private int position = 0;
-
-    public Car(String name) {
-        this.name = name;
-    }
-
-    // 추가 기능 구현
-}
-```
+- 모든 기능을 TDD로 구현해 단위 테스트가 존재해야 한다. 단, UI(System.out, System.in) 로직은 제외
+- 핵심 로직을 구현하는 코드와 UI를 담당하는 로직을 구분한다.
+- UI 로직을 InputView, ResultView와 같은 클래스를 추가해 분리한다.
+- 모든 원시 값과 문자열을 포장한다.
+- 일급 컬렉션을 쓴다.
 
 ---
 
