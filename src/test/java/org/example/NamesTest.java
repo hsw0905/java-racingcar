@@ -4,18 +4,18 @@ import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThatCode;
 
-public class NameDtoTest {
+public class NamesTest {
     @Test
     void shouldHaveNamesAndSplitWithComma() {
-        assertThatCode(() -> new NameDto("pobi,jun"))
+        assertThatCode(() -> new Names("pobi,jun"))
                 .doesNotThrowAnyException();
     }
 
     @Test
     void shouldThrowExceptionWhenInvalidName() {
-        assertThatCode(()-> new NameDto("pobi,..."))
+        assertThatCode(()-> new Names("pobi,..."))
                 .isInstanceOf(IllegalArgumentException.class);
-        assertThatCode(()-> new NameDto("pobi,pobi"))
+        assertThatCode(()-> new Names("pobi,pobi"))
                 .isInstanceOf(IllegalArgumentException.class);
     }
 }
